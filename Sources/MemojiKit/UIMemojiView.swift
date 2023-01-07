@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol MemojiViewDelegate: AnyObject {
+public protocol UIMemojiViewDelegate: AnyObject {
     func didUpdateImage(image: UIImage, type: ImageType)
 }
 
@@ -42,7 +42,7 @@ public class UIMemojiView: UIView {
     }
     
     //MARK: Properties
-    public weak var delegate: MemojiViewDelegate?
+    public weak var delegate: UIMemojiViewDelegate?
     
     /// Flag indicting if there the view should be editable. If set to true the tapping would open the keyboard for the memoji input.
     public var isEditable: Bool = true {
