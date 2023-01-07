@@ -1,6 +1,6 @@
 //
-//  MemojiView.swift
-//  MemojiView
+//  UIMemojiView.swift
+//  UIMemojiView
 //
 //  Created by Emre Armagan on 10.04.22.
 //
@@ -12,21 +12,21 @@ public protocol MemojiViewDelegate: AnyObject {
 }
 
 public class UIMemojiView: UIView {
-    internal var imageView: CircularImageView = {
-        let view = CircularImageView()
+    internal var imageView: UICircularImageView = {
+        let view = UICircularImageView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    internal var textView: MemojiTextField = {
-        let tv = MemojiTextField()
+    internal var textView: UIMemojiTextField = {
+        let tv = UIMemojiTextField()
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
     
-    internal lazy var editImageView: CircularImageView = {
-        let i = CircularImageView()
+    internal lazy var editImageView: UICircularImageView = {
+        let i = UICircularImageView()
         i.isUserInteractionEnabled = false
         //TODO: Fallback image
         i.image = UIImage(systemName: "pencil")
@@ -152,7 +152,7 @@ public class UIMemojiView: UIView {
 }
 
 //MARK: -MemojiTextFieldDelegate
-extension UIMemojiView: MemojiTextFieldDelegate {
+extension UIMemojiView: UIMemojiTextFieldDelegate {
     func didUpdateEmoji(emoji: UIImage?, type: ImageType) {
         self.imageView.image = emoji
         

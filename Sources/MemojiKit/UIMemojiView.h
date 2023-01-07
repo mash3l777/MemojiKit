@@ -1,6 +1,6 @@
 //
-//  MemojiView.h
-//  MemojiView
+//  UIMemojiView.h
+//  UIMemojiView
 //
 //  Created by Emre Armagan on 10.04.22.
 //

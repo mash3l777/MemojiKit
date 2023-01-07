@@ -1,6 +1,6 @@
 //
-//  MemojiTextField.swift
-//  MemojiView
+//  UIMemojiTextField.swift
+//  UIMemojiView
 //
 //  Created by Emre Armagan on 10.04.22.
 //
@@ -9,7 +9,7 @@ import UIKit
 
 
 /// Delegate for the MemojiTextField
- protocol MemojiTextFieldDelegate: AnyObject {
+ protocol UIMemojiTextFieldDelegate: AnyObject {
      /// The 'isMemoji' flag indicates whether the image is an actual emoji or just a
      func didUpdateEmoji(emoji: UIImage?, type: ImageType)
 }
@@ -23,10 +23,10 @@ public enum ImageType: Equatable {
 }
 
 /// MemojiTextField is responsible for the retrieving the actual memoji/emoji
-class MemojiTextField: UITextView {
+class UIMemojiTextField: UITextView {
     private let memojiPasteboard = UIPasteboard(name: UIPasteboard.Name(rawValue: "memojiPasteboard"), create: true)
     
-    internal weak var emojiDelegate: MemojiTextFieldDelegate?
+    internal weak var emojiDelegate: UIMemojiTextFieldDelegate?
 
     //TODO: Opening the emoji keyboard causes some warning. 
     /// Opens the keyboard with the emoji field
@@ -99,7 +99,7 @@ class MemojiTextField: UITextView {
 }
 
 //MARK: - UITextFieldDelegate
-extension MemojiTextField: UITextViewDelegate {
+extension UIMemojiTextField: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()

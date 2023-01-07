@@ -1,13 +1,13 @@
 //
-//  CircularImageView.swift
-//  MemojiView
+//  UICircularImageView.swift
+//  UIMemojiView
 //
 //  Created by Emre Armagan on 10.04.22.
 //
 
 import UIKit
 
-internal class CircularImageView: UIView {
+internal class UICircularImageView: UIView {
     //MARK: Properties
     internal var imageView = UIImageView()
     

@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct MemojiView: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
+public struct MemojiView: UIViewRepresentable {
+    public func makeUIView(context: Context) -> some UIView {
         return UIMemojiView()
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
+    public func updateUIView(_ uiView: UIViewType, context: Context) {
     }
 }
